@@ -1,0 +1,60 @@
+.thumbnail {
+  position: relative;
+  padding: 0;
+
+  .icon-bar{
+    width: 100%;
+    background-color: #dff0d8;
+    opacity: 0.7;
+    list-style: none;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+
+    li{
+      float: right;
+      margin-right: 3px;
+
+      .btn{
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      .fa-btn{
+        color: #d9534f;
+      }
+    }
+  }
+
+  .caption {
+    padding: 0;
+
+    a{
+      color: black;
+    }
+  }
+}
+
+.project-modal{
+  background-color: #fff;
+  display: block;
+  height:137px;
+  line-height: 1.42857;
+  margin-bottom: 20px;
+  padding: 4px;
+  transition: border 0.2s ease-in-out 0s;
+
+  .modal-trigger{
+    display: block;
+    font-size: 2em;
+    margin: 12% auto;
+
+     .fa-btn{
+       margin-right: 0;
+       width: auto;
+       height: auto;
+     }
+  }
+}
