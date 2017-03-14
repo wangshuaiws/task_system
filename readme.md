@@ -1,27 +1,12 @@
-# Laravel PHP Framework
-
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+这是使用laravel框架做的任务管理系统。
+其中运用了http://packalyst.com/中为laravel开发的各种插件。
+对laravel中的数据模型，模型关系，数据迁移，增删改查的数据逻辑、
+blade模板、表单功能、数据验证、文件上传、bootstrap整合、repository注入、
+Auth登陆注册、elixir前端管理等等重要的知识点均有运用。
+实现了基本的注册登录功能，可以新建项目，编辑项目，删除项目，新建项目时
+可以上传缩略图。新建完一个项目后可以点击项目缩略图进入项目主页，在其中
+可以新建任务，编辑任务，删除任务，并可以将未完成任务标记完成。
+在所有任务中显示所有的已完成的任务和未完成的任务。
+可以根据用户的任务数建立相应的饼状图，柱形图，雷达图。
+在用户权限管理中管理员可以对用户和角色进行操作。非管理员用户不显示权限
+管理按钮。
