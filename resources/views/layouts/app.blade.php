@@ -22,6 +22,7 @@
         .fa-btn {
             margin-right: 6px;
         }
+
     </style>
 </head>
 <body id="app-layout">
@@ -48,6 +49,17 @@
                 <ul class="nav navbar-nav">
                    <!-- <li><a href="{{ route('tasks.index') }}">所有任务</a></li>-->
                     <li>{{ link_to_route('tasks.index','所有任务') }}</li>
+                    <li>{{ link_to_route('tasks.charts','图标统计') }}</li>
+                    @role('admin')
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="
+                        true" aria-expanded="false">用户权限管理<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>{{ link_to_route('admin.roles.index','角色权限') }}</li>
+                            <li>{{ link_to_route('admin.users.index','用户概览') }}</li>
+                        </ul>
+                    </li>
+                    @endrole
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -73,6 +85,13 @@
     </nav>
 
     @yield('content')
+        <footer class="footer">
+            <div class="container">
+                当前总共有{{ $total }}个任务,已完成的任务{{ $doneCount }}个,未完成的{{ $toDoCount }}个
+            </div>
+        </footer>
+
+
 
     <!-- JavaScripts -->
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>

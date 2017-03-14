@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Repository\TasksRepository;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Task;
 use Auth;
@@ -19,6 +19,14 @@ class TasksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $tasks;
+    public function __construct(TasksRepository $tasks)
+    {
+        $this->middleware('auth');
+        $this->tasks = $tasks;
+    }
+
+
     public function index()
     {
         $toDo = Auth::user()->tasks()->where('completed',0)->paginate(15);
@@ -60,7 +68,7 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('tasks/details');
     }
 
     /**
@@ -108,5 +116,15 @@ class TasksController extends Controller
     {
         Task::find($id)->delete();
         return Redirect::back();
+    }
+
+    public function charts()
+    {
+        $total = $this->tasks->total();
+        $toDoCount = $this->tasks->toDoCount();
+        $DoneCount = $this->tasks->doneCount();
+        $projects = Project::with('tasks')->get();
+        $names = Project::lists('name');
+        return view('tasks/charts',compact('total','toDoCount','DoneCount','names','projects'));
     }
 }

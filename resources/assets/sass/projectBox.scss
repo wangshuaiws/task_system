@@ -58,3 +58,19 @@
      }
   }
 }
+
+.footer{
+  width: 1600px;
+  height: 50px;
+  border: 1px solid transparent;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  background-color: #e7e7e7;
+
+  .container{
+      height: 30px;
+      padding: 15px;
+      font-size: 18px;
+  }
+}

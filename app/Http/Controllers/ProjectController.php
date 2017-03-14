@@ -8,6 +8,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Image;
 use Auth;
+use Carbon\Carbon;
 use App\Repository\ProjectsRepository;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\EditProjectRequest;
@@ -66,6 +67,7 @@ class ProjectController extends Controller
 
     public function show($name)
     {
+        //return Carbon::createFromDate(1993)->age;
         $project = Auth::user()->project()->where('name',$name)->first();
         $toDo = $project->tasks()->where('completed',0)->get();
         $Done = $project->tasks()->where('completed',1)->get();

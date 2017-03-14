@@ -17,5 +17,13 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::resource('projects','ProjectController');
-Route::resource('tasks','TasksController');
+//Route::group(['middleware'=>'isnow'],function() {
+    Route::get('tasks/charts', ['as' => 'tasks.charts', 'uses' => 'TasksController@charts']);
+    Route::resource('tasks', 'TasksController');
+//});
 Route::post('tasks/{id}/check',['as'=>'tasks.check','uses'=>'TasksController@check']);
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+    Route::resource('roles','RolesController');
+    Route::resource('Permissions','PermissionsController');
+    Route::resource('users','UsersController');
+});

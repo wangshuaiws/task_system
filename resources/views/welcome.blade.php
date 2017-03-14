@@ -18,7 +18,7 @@
                         </li>
                     </ul>
                     <a href="{{ route('projects.show',$project->name) }}">
-                    <img src="{{ asset('thumbnails/' . $project->thumbnail)}}" alt="$project->name">
+                    <img src="/thumbnails/{{ $project->thumbnail }}" alt="$project->name">
                     </a>
                     <div class="caption">
                         <a href="{{ route('projects.show',$project->name) }}">

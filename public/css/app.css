@@ -5773,10 +5773,29 @@ button.close {
       width: auto;
       height: auto; }
 
+.footer {
+  width: 1600px;
+  height: 50px;
+  border: 1px solid transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #e7e7e7; }
+  .footer .container {
+    height: 30px;
+    padding: 15px;
+    font-size: 18px; }
+
 .tasks-tabs .first-cell {
   padding-left: 4em; }
 
 .tasks-tabs .icon-cell {
   width: 4em; }
+
+.role-btn {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0; }
 
 /*# sourceMappingURL=app.css.map */

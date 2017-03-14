@@ -12,7 +12,10 @@
             <div role="tabpanel" class="tab-pane active" id="toDo">
               <table class="table table-striped">
                   @foreach($toDo as $task)
-                      <tr><td class="first-cell"> {{ $task->title }} </td>
+                      <tr>
+                          <td class="date-cell"> {{ $task->updated_at->diffForHumans() }} </td>
+                         {{-- <td class="first-cell"> {{ $task->title }} </td> --}}
+                          <td class="first-cell">{{ link_to_route('tasks.show',$task->title,$task->id) }}</td>
                           <td class="icon-cell">@include('tasks/check')</td>
                           <td class="icon-cell"> @include('tasks/_editForm') </td>
                           <td class="icon-cell">@include('tasks/_deleteForm')</td>
