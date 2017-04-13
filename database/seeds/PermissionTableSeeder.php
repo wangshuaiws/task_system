@@ -24,14 +24,14 @@ class PermissionTableSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');   //开启外键约束
 
         //创建初始的管理员用户
-       /* $admin = User::create([
+        $aa = User::create([
             'name' => 'ws',
-            'email' => '1473949342@qq.com',
-            'pass' =>bcrypt('123456')
+            'email' => '1473949341@qq.com',
+            'password' =>bcrypt('123456')
 
-        ]);*/
+        ]);
        // $aa = User::find('users')->where('name', 'aa')->first();
-        $aa = User::where('name', '=', 'aa')->first();
+       //$aa = User::where('name', '=', 'aa')->first();
 
         //创建初始的role(初始的角色设定)
         $admin = Role::create([
@@ -53,6 +53,14 @@ class PermissionTableSeeder extends Seeder
             [
                 'name' => 'delete_user',
                 'display_name' => '删除用户',
+            ],
+            [
+                'name' => 'edit_role',
+                'display_name' => '编辑角色',
+            ],
+            [
+                'name' => 'delete_role',
+                'display_name' => '删除角色',
             ]
         ];
         foreach($permissions as $permission)

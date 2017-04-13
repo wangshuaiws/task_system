@@ -68,7 +68,8 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        return view('tasks/details');
+        $task = Task::findOrFail($id);
+        return view('tasks.details',compact('task'));
     }
 
     /**
@@ -126,5 +127,10 @@ class TasksController extends Controller
         $projects = Project::with('tasks')->get();
         $names = Project::lists('name');
         return view('tasks/charts',compact('total','toDoCount','DoneCount','names','projects'));
+    }
+
+    public function searchApi()
+    {
+        return Auth::user()->tasks;
     }
 }

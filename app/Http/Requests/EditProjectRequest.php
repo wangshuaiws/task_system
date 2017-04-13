@@ -25,7 +25,7 @@ class EditProjectRequest extends Request
     {
         return [
             'name' => 'required|unique:projects',
-            'title' => 'required|unique:projects'
+            //'title' => 'required|unique:projects'
         ];
     }
 

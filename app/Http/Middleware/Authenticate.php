@@ -15,6 +15,11 @@ class Authenticate
      * @param  string|null  $guard
      * @return mixed
      */
+    /*public function __construct()
+    {
+        $this->middleware('enable');
+    }*/
+
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->guest()) {
