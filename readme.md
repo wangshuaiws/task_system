@@ -1,5 +1,5 @@
 ## 任务管理系统技术
-* 运用了http://packalyst.com/中为laravel开发的各种插件。
+* 运用了 http://packalyst.com/ 中为laravel开发的各种插件。
 * 对laravel中的数据模型，模型关系，数据迁移，增删改查的数据逻辑;
 * blade模板、表单功能、数据验证、文件上传、bootstrap整合、repository注入;
 * Auth登陆注册、elixir前端管理等等重要的知识点均有运用。
